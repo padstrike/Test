@@ -1,1 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Input</p>
+    <p id="Input"></p>
+    <p>Output</p>
+    <p id="Output"></p>
+    <script>
+        function randomRgb(length) {
+    let result           = [];
+    let colors      = 'RGB';
+    let charLength = colors.length;
+    for ( let i = 0; i < length; i++ ) {
+      result.push(colors.charAt(Math.floor(Math.random() * 
+ charLength)));
+   }
+   return result.join('');
+}
+let input = (randomRgb(5))
 
+document.getElementById("Input").innerHTML = input
+        
+        function RepeatColors(){
+            let colors = input.split("")
+            let x = 0           
+            for(let i = 0; i < colors.length; i++){
+                if(colors[i]===colors[i+1] ){
+                    x=x+1
+                    document.getElementById("Output").innerHTML = x
+                }
+            }           
+        }  
+RepeatColors(input)
+
+    
+    </script>
+</body>
+</html>
