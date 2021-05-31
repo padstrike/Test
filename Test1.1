@@ -8,6 +8,7 @@
 </head>
 <body>
     <p>Input</p>
+    <p id ="Yournum"></p> 
     <p id="Input"></p>
     <p>Output</p>
     <p id="Output"></p>
@@ -22,8 +23,9 @@
    }
    return result.join('');
 }
-let input = (randomRgb(5))
-
+let y = prompt("กรอกจำนวน N")
+document.getElementById("Yournum").innerHTML = y
+let input = (randomRgb(y))
 document.getElementById("Input").innerHTML = input
         
         function RepeatColors(){
