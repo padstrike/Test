@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<body>
+    <p>Input</p>
+    <p id="inputn"></p><p id="inputa"></p><p id="inputb"></p><p id="inputc"></p>
+    <p>Output</p>
+    <p id="Output"></p>
+    <script>
+            let inputn = parseInt(prompt("กรอกค่า N"))
+            document.getElementById("inputn").innerHTML = inputn
+            let inputa = parseInt(prompt("กรอกค่า A"))
+            document.getElementById("inputa").innerHTML = inputa
+            let inputb = parseInt(prompt("กรอกค่า B"))
+            document.getElementById("inputb").innerHTML = inputb
+            let inputc = parseInt(prompt("กรอกค่า C"))
+            document.getElementById("inputc").innerHTML = inputc
+            
+     function CountWood(n,a,b,c) {
+      
+            let x = n%a
+            let y = n%b
+            let z = n%c
+            
+            
+            if(x,y,z !== 0){
+                result =[]
+                let i = Math.min(a,b,c)
+                
+                let j = Math.trunc(n/i)
+                let k = Math.trunc(a/i) 
+                let l = Math.trunc(b/i) 
+                let m = Math.trunc(c/i)  
+                
+                let woodCase1 = (j-k)
+                let woodCase2 = (j-l)
+                let woodCase3 = (j-m)
+
+                let sum1 = woodCase1*i + a
+                let sum2 = woodCase2*i + b
+                let sum3 = woodCase3*i + c
+
+                if(sum1===n){
+                    result.push(woodCase1+1)
+                    
+                }
+                if(sum2===n){
+                    result.push(woodCase2+1)
+                }
+                if(sum3===n){
+                    result.push(woodCase3+1)
+                }
+            document.getElementById("Output").innerHTML = (Math.max(...result))    
+            }if(x,y,z === 0){
+                let i = Math.min(a,b,c)
+                document.getElementById("Output").innerHTML = n/i
+
+            }if(a,b,c === n){
+                document.getElementById("Output").innerHTML = 1
+            }
+            
+            
+        }
+    CountWood(inputn,inputa,inputb,inputc)
+    </script>
+</body>
+</html>
